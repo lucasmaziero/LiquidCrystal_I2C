@@ -48,5 +48,5 @@ void loop()
 ```
 ## License
 
-This component is licensed under the MIT license. See [License File](LICENSE.md) 
+This component is licensed under the MIT license. See [License File](LICENSE) 
 for more information.
