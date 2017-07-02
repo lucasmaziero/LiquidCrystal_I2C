@@ -46,3 +46,7 @@ void loop()
 	// Do nothing here...
 }
 ```
+## License
+
+This component is licensed under the MIT license. See [License File](LICENSE.md) 
+for more information.
