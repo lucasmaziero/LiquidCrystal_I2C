@@ -1,21 +1,23 @@
 /**************************************************************************
 LIQUIDCRYSTAL_I2C FOR ESP8266 OR ARDUINO
 ***************************************************************************
-AUTOR: LUCAS MAZIERO - Electrical Engineer
-E-MAIL: lucas.mazie.ro@hotmail.com
-CIDADE: Santa Maria - Rio Grande do Sul - Brasil
+AUTHOR: LUCAS MAZIERO - Electrical Engineer
+EMAIL: lucas.mazie.ro@hotmail.com
+CITY: Santa Maria - Rio Grande do Sul - Brasil
 ***************************************************************************
-Versão: 1.0
-Data:  30/06/2017
-Modificado: --/--/20--
+Version: 1.1
+Date:  30/06/2017
+Modified: 02/07/2017
 ***************************************************************************
-BASE DO CODIGO: https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library
+CODE BASE: https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library
 ***************************************************************************
 CHANGELOG:
 * 30/06/2017 (1.0v):
     -> add degug #if defined(ESP8266)
     -> Add new function "begin(uint8_t sda, uint8_t scl)"
     -> Add new function "init()"
+* 02/07/2017 (1.1v):
+    -> Add new function "getBacklight()" get status of backlight 
 
 ***************************************************************************
 Copyright(2017) by: Lucas Maziero.
@@ -224,6 +226,11 @@ void LiquidCrystal_I2C::noBacklight(void) {
 void LiquidCrystal_I2C::backlight(void) {
 	_backlightval=LCD_BACKLIGHT;
 	expanderWrite(0);
+}
+
+// Get status of blacklight
+bool LiquidCrystal_I2C::getBacklight() {
+  return _backlightval == LCD_BACKLIGHT;
 }
 
 /*********** mid level commands, for sending data/cmds */

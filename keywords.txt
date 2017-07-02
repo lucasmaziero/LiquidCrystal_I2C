@@ -28,6 +28,7 @@ shiftIncrement	KEYWORD2
 shiftDecrement	KEYWORD2
 noBacklight	KEYWORD2
 backlight	KEYWORD2
+getBacklight	KEYWORD2
 autoscroll	KEYWORD2
 noAutoscroll	KEYWORD2
 createChar	KEYWORD2

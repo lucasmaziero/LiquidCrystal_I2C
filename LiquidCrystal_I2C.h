@@ -1,26 +1,29 @@
 /**************************************************************************
 LIQUIDCRYSTAL_I2C FOR ESP8266 OR ARDUINO
 ***************************************************************************
-AUTOR: LUCAS MAZIERO - Electrical Engineer
-E-MAIL: lucas.mazie.ro@hotmail.com
-CIDADE: Santa Maria - Rio Grande do Sul - Brasil
+AUTHOR: LUCAS MAZIERO - Electrical Engineer
+EMAIL: lucas.mazie.ro@hotmail.com
+CITY: Santa Maria - Rio Grande do Sul - Brasil
 ***************************************************************************
-Versão: 1.0
-Data:  30/06/2017
-Modificado: --/--/20--
+Version: 1.1
+Date:  30/06/2017
+Modified: 02/07/2017
 ***************************************************************************
-BASE DO CODIGO: https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library
+CODE BASE: https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library
 ***************************************************************************
 CHANGELOG:
 * 30/06/2017 (1.0v):
     -> add degug #if defined(ESP8266)
     -> Add new function "begin(uint8_t sda, uint8_t scl)"
     -> Add new function "init()"
+* 02/07/2017 (1.1v):
+    -> Add new function "getBacklight()" get status of backlight 
 
 ***************************************************************************
 Copyright(2017) by: Lucas Maziero.
 **************************************************************************/
-#ifndef LIQUID_CRYSTAL_I2C_H
+
+#ifndef LIQUID_CRYSTAL_I2C_H 
 #define LIQUID_CRYSTAL_I2C_H
 
 #include <Arduino.h>
@@ -157,6 +160,7 @@ public:
 	void shiftDecrement();
 	void noBacklight();
 	void backlight();
+	bool getBacklight();
 	void autoscroll();
 	void noAutoscroll(); 
 	void createChar(uint8_t, uint8_t[]);
