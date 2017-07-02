@@ -20,7 +20,7 @@ CHANGELOG:
 ***************************************************************************
 Copyright(2017) by: Lucas Maziero.
 **************************************************************************/
-
+#ifndef LIQUID_CRYSTAL_I2C_H
 #define LIQUID_CRYSTAL_I2C_H
 
 #include <Arduino.h>
