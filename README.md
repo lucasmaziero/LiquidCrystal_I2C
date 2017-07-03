@@ -6,14 +6,14 @@ Original Library [Arduino-LiquidCrystal-I2C-library](https://github.com/fdebraba
 Standard for ESP8266 with pins 4-SDA 5-SCL or ARDUINO with A4-SDA A5-SCL and LCD 16x2 display
 and access from ESP8266: lcd.begin(sda,scl) or ARDUINO: lcd.begin()
 
-# Installation #
+## Installation
 Create a new folder called "LiquidCrystal_I2C" under the folder named "libraries" in your Arduino sketchbook folder.
 Create the folder "libraries" in case it does not exist yet. Place all the files in the "LiquidCrystal_I2C" folder.
 
-# Usage #
+## Usage
 To use the library in your own sketch, select it from *Sketch > Import Library*.
 
-# Code example #
+## Code example
 
 Code basic example for ESP8266 or ARDUINO see more here [examples](examples)
 ```Arduino
