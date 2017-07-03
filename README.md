@@ -1,7 +1,7 @@
 # LiquidCrystal_I2C
 ESP8266 or ARUINO with 16x2 i2c adaptable to others, tested with ESP8266-12(LoLin), ESP8266-01 and Arduino-Uno.
 
-Compatible with the Arduino IDE 1.8.3 Library [LiquidCrystal_I2C](https://github.com/lucasmaziero/LiquidCrystal_I2C).
+Compatible with the Arduino IDE 1.8.3 Library [LiquidCrystal_I2C](https://github.com/lucasmaziero/LiquidCrystal_I2C)
 
 Original Library [Arduino-LiquidCrystal-I2C-library](https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library)
 
