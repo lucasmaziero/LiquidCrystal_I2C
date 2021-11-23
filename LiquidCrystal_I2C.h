@@ -17,13 +17,13 @@ CHANGELOG:
     -> Add new function "begin(uint8_t sda, uint8_t scl)"
     -> Add new function "init()"
 * 02/07/2017 (1.1v):
-    -> Add new function "getBacklight()" get status of backlight 
+    -> Add new function "getBacklight()" get status of backlight
 
 ***************************************************************************
 Copyright(2017) by: Lucas Maziero.
 **************************************************************************/
 
-#ifndef LIQUID_CRYSTAL_I2C_H 
+#ifndef LIQUID_CRYSTAL_I2C_H
 #define LIQUID_CRYSTAL_I2C_H
 
 #include <Arduino.h>
@@ -95,15 +95,15 @@ public:
 	 * @param lcd_rows	Number of rows your LCD display has.
 	 * @param charsize	The size in dots that the display has, use LCD_5x10DOTS or LCD_5x8DOTS.
 	 */
-	LiquidCrystal_I2C(uint8_t lcd_addr, uint8_t lcd_cols, uint8_t lcd_rows, uint8_t charsize = LCD_5x8DOTS);
+	LiquidCrystal_I2C(uint8_t lcd_addr, uint8_t lcd_cols, uint8_t lcd_rows, uint8_t charsize = LCD_5x8DOTS, TwoWire & wire = Wire);
 
 	/**
 	 * Set the LCD display in the correct begin state, must be called before anything else is done.
 	 */
 #if defined(ESP8266)
-	void begin(uint8_t sda = SDA , uint8_t scl = SCL); // Int with pin default ESP8266 I2C 
+	void begin(uint8_t sda = SDA , uint8_t scl = SCL); // Int with pin default ESP8266 I2C
 #else
-	void begin(); // Int with pin default ARDUINO 
+	void begin(); // Int with pin default ARDUINO
 #endif
 
 	 /**
@@ -111,7 +111,7 @@ public:
 	  * from the first position on LCD display.
 	  */
 	void clear();
-	  
+
 	/**
 	 * Next print/write operation will will start from the first position on the LCD display.
 	 */
@@ -122,22 +122,22 @@ public:
 	  * Also all characters written on the display will return, when the display in enabled again.
 	  */
 	void noDisplay();
-	  
+
 	/**
 	 * Show the characters on the LCD display, this is the normal behaviour. This method should
 	 * only be used after noDisplay() has been used.
-	 */ 
+	 */
 	void display();
 
 	/**
 	 * Do not blink the cursor indicator.
 	 */
 	void noBlink();
-	 
+
 	/**
 	 * Start blinking the cursor indicator.
-	 */ 
-	void blink();	 
+	 */
+	void blink();
 
 	/**
 	 * Do not show a cursor indicator.
@@ -147,7 +147,7 @@ public:
 	/**
  	 * Show a cursor indicator, cursor can blink on not blink. Use the
 	 * methods blink() and noBlink() for changing cursor blink.
-	 */ 
+	 */
 	void cursor();
 
 	void scrollDisplayLeft();
@@ -162,9 +162,9 @@ public:
 	void backlight();
 	bool getBacklight();
 	void autoscroll();
-	void noAutoscroll(); 
+	void noAutoscroll();
 	void createChar(uint8_t, uint8_t[]);
-	void setCursor(uint8_t, uint8_t); 
+	void setCursor(uint8_t, uint8_t);
 	virtual size_t write(uint8_t);
 	void command(uint8_t);
 
@@ -177,7 +177,7 @@ public:
 	void setBacklight(uint8_t new_val);				// alias for backlight() and nobacklight()
 	void load_custom_character(uint8_t char_num, uint8_t *rows);	// alias for createChar()
 	void printstr(const char[]);
-	 
+
 private:
 	void init();
 	void send(uint8_t, uint8_t);
@@ -192,6 +192,7 @@ private:
 	uint8_t _rows;
 	uint8_t _charsize;
 	uint8_t _backlightval;
+    TwoWire & _wire;
 };
 
 #endif // LIQUID_CRYSTAL_I2C_H
